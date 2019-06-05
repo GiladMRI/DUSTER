@@ -38,7 +38,7 @@ Raw2Nii(MeanVol,MeanFN,'float32',T1MapFN);
 %%
 MskMinSignal=all(DCE4D>MinSignal,4);
 PercentAboveMin=sum(MskMinSignal(:))./numel(MskMinSignal)*100
-figure;montage(MskMinSignal);title('Min signal mask');
+% figure;montage(MskMinSignal);title('Min signal mask');
 %%
 BrainMask=MeanVol>1e5;
 %% Prepare report log
