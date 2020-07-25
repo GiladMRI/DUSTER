@@ -18,6 +18,9 @@ for i=GoodSlicesS
 end
 N=median(A(A>0))*(A./S);
 % N(~M)=NaN;
+N(~isfinite(N))=0;
+N=max(0,N);
+N=min(1e5,N);
 
 TempFN=[BaseP 'QuickB1Corrected_' ShortName '.nii'];
 Raw2Nii(N,TempFN,'float32', SrcFN);
